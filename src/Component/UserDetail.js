@@ -8,6 +8,7 @@ import Footer from '../CommonComponent/Footer';
 import Header from '../CommonComponent/Header';
 const UserDetail = () => {
     const navigate =useNavigate();
+    const[searchTerm,setSearchTerm]=useState("");
     const [user, setUser] = useState([]);
     const deletequiz = (id) => {
         axios.delete("http://localhost:5000/api/v1/user/delete/"+id,{
@@ -61,7 +62,11 @@ const UserDetail = () => {
 <ToastContainer/>
 
      <Header/>
-
+        <input type="text" placeholder="Search.." className="form-control" style={{marginTop:50,marginBottom:20,width:"40%"}} 
+        
+        onChange={(e)=>{
+            setSearchTerm(e.target.value);
+        }}/>
         <table class="table-design">
             <thead>
                 <tr>
@@ -77,14 +82,27 @@ const UserDetail = () => {
             <tbody>
             
             {
-            user.map((curElem) => {
+            user.filter(val=>{
+                if(searchTerm===""){
+                    return val;
+                }
+                else if(
+                    val.email.toLowerCase().includes(searchTerm).toLowerCase() ||
+                    val.name.toLowerCase().includes(searchTerm).toLowerCase() ||
+                    val.phone.toLowerCase().includes(searchTerm).toLowerCase() ||
+                    val.role.toLowerCase().includes(searchTerm).toLowerCase()
+                ){
+                    return val;
+                }
+            }).map((curElem) => {
                 const {_id,email, name,role, phone } = curElem
                 return (
                     <>
                         <tr>
                     <td data-label="S.No"> {email}</td>
                     <td data-label="S.No">  {name}</td>
-                    <td data-label="S.No"> {phone}</td>
+                    <td data-label="S.No"> 
+                    {phone}</td>
                     <td data-label="S.No"> {role}</td>
                     <td data-label="Name"><button className="btn btn-danger delete" onClick={() => deletequiz(_id)}>Delete</button></td> 
                     <td data-label="Name"> <NavLink className="btn btn-primary "

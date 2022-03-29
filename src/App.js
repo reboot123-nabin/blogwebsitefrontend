@@ -14,9 +14,23 @@ import AddBlog from './Component/AddBlog';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle'
 import PostBlog from './Component/PostBlog';
+import Search from './Component/Search';
+
+import UseRef from './Component/UseRef';
+
+import CallBack from './Component/CallBack';
+import SResult from './Component/SResult';
+import RefHook from './ReactHook/RefHook';
+import SearchTable from './Component/SearchTable';
+import SearchReact from './Component/SearchReact';
+import Cart from "./components/Cart";
+import TodoApp from './TodoApp';
+import Upload from './CommonComponent/Upload';
+
 function App() {
+
   return (
-    <div className="App">
+    <>
     
       <BrowserRouter>
       {/* <Header/> */}
@@ -30,15 +44,27 @@ function App() {
        <Route path="/updateuser/:id" exact element={<UpdateUser/>}/>
        <Route path="/blog" exact element={<AddBlog/>}/>
        <Route path="/addblog" exact element={<PostBlog/>}/>
+       <Route path="/search" exact element={<Search/>}/>
        <Route exact path="*" element={<Error/>}/>
-        </Routes>
-
+       <Route path="/sresult" exact element={<SResult/>}/>
+       {/* <Route exact path="/useref" element={<UseRef/>}/> */}
+      
+       <Route exact path="/callback" element={<CallBack/>}/>
+     
+      <Route path="reference" exact element={<RefHook/>}/>
+      <Route path="/usecallback" element={<useCallBack/>}/>
+      <Route path="/filtertable" element={<SearchTable/>}/>
+       <Route path="/searchreact" element={<SearchReact/>}/>
+        <Route path="/todoapp" element={<TodoApp/>}/> 
+         <Route path="/cart" element={<Cart/>}/>  
+         <Route path="/upload" exact element={<Upload/>}/>
+</Routes>
         
     </BrowserRouter>
 
 
       
-    </div>
+    </>
   );
 }
 

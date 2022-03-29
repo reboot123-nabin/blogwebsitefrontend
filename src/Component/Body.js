@@ -7,6 +7,7 @@ import axios from 'axios';
 import { Dropdown } from 'react-bootstrap';
 import { useNavigate ,NavLink} from 'react-router-dom';
 import "aos/dist/aos.css";
+import { SocialIcon } from 'react-social-icons';
 import AOS from "aos";
 const Body = () => {
     const navigate=useNavigate();
@@ -213,11 +214,11 @@ setTimeout(type,200);
 
 <div class="container">
     <div class="content">
-      <div class="left-side">
+      <div class="left-side" data-aos={"flip-up"}>
         <div class="topic-text">Our Location</div>
         <iframe src="https://www.google.com/maps/embed?pb=!1m24!1m12!1m3!1d393.43526914434494!2d85.3068999847664!3d27.688584043753625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m9!3e2!4m3!3m2!1d27.688566899999998!2d85.30713879999999!4m3!3m2!1d27.6885056!2d85.3069525!5e0!3m2!1sen!2snp!4v1641989063278!5m2!1sen!2snp" width="300" height="350" style={{border:'0'}} allowfullscreen="" loading="lazy"></iframe> 
       </div>
-      <div class="right-side">
+      <div class="right-side" data-aos={"flip-down"}>
         <div class="topic-text">Send us a message</div>
         <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
       <form action="#">

@@ -30,8 +30,6 @@ const PostBlog = () => {
             setTimeout(() => {
               navigate('/blog')
             }, 3500)
-    
-        
           })
           .catch((err) => {
             console.log(err);
@@ -43,7 +41,49 @@ const PostBlog = () => {
     <div>
         <ToastContainer/>
         <Header/>
-        <section className="container-fluid">
+
+
+        <div class="wrapper">
+    <header>Send us a Message</header>
+    <form method="POST" action="/upload" encType="multipart/form-data">
+      <div class="dbl-field">
+        <div class="field">
+        <input type="text" name="name" onChange={handleInput} value={post.name} readonly class="form-control-plaintext" id="staticEmail" placeholder="enter name"/>
+          <i class='fas fa-user'></i>
+        </div>
+        <div class="field">
+        <input type="text" name="replies" onChange={handleInput} value={post.replies} readonly class="form-control-plaintext" id="staticEmail" placeholder="enter replies"/>
+          <i class='fas fa-envelope'></i>
+        </div>
+      </div>
+      <div class="dbl-field">
+        <div class="field">
+        <input type="text" name="title" onChange={handleInput} value={post.title} class="form-control" id="inputPassword" placeholder="Password"/>
+          <i class='fas fa-phone-alt'></i>
+        </div>
+        <div class="field">
+        <input type="date" name="date" onChange={handleInput} value={post.date} class="form-control" id="inputPassword" placeholder="Password"/>
+          <i class='fas fa-globe'></i>
+        </div>
+      </div>
+      <div class="message">
+      <textarea name="message" onChange={handleInput} value={post.message} className="form-control" placeholder="enter message"/>
+        <i class="material-icons">message</i>
+      </div>
+      <div class="button-area">
+      <button type="submit" className="btn btn-primary" onClick={submitdata}>Submit</button>
+        <span></span>
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+
+        {/* <section className="container-fluid">
             <section className="row">
      <div className="formgroup" style={{height:"200px;"}}>
      <form >
@@ -90,7 +130,7 @@ const PostBlog = () => {
 
 </div>
 </section>
-</section>
+</section> */}
 <Footer/>
     </div>
   )

@@ -10,10 +10,13 @@ import Person from "@material-ui/icons/Person";
 import InputAdornment from "@material-ui/core/InputAdornment";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Input from "@material-ui/core/Input";
-import Header from '../CommonComponent/Header';
-import Footer from '../CommonComponent/Footer';
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+
+import Header from '../CommonComponent/Header';
+import Footer from '../CommonComponent/Footer';
 const SignUp = () => {
   const [values, setValues] = React.useState({
     password: "",
@@ -61,6 +64,8 @@ const SignUp = () => {
             })
             
         }
+
+        
   return <div>
 
       <ToastContainer/>
@@ -113,7 +118,7 @@ const SignUp = () => {
             </InputAdornment>
           }
       />
-                        </div>
+                        </div> 
                         <div className="form-group">
                          
                           <InputLabel htmlFor="standard-adornment-password">
@@ -130,8 +135,8 @@ const SignUp = () => {
             </InputAdornment>
           }
       />
-                        </div>
-                        <div clasclassNames="form-group">
+                        </div> 
+                         <div classNames="form-group">
                         
                           
       <InputLabel htmlFor="standard-adornment-password">
@@ -152,7 +157,7 @@ const SignUp = () => {
         }
       />
                         
-                        </div>
+                        </div> 
                         <div className="form-check mt-3">
                           <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
                           <label class="form-check-label" for="exampleCheck1">Check me out</label>
